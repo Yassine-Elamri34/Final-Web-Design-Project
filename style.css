@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 * {
     box-sizing: border-box;
@@ -206,3 +207,233 @@ h1 {
     font-size: 18px;
     display: none;
 }
+=======
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+    background: linear-gradient(135deg, #020617, #0f172a, #1e293b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+#welcome {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeOut 3s ease-out forwards;
+    z-index: 9999;
+}
+
+@keyframes fadeOut {
+    0%   { opacity: 1; }
+    70%  { opacity: 1; }
+    100% { opacity: 0; pointer-events: none; }
+}
+
+.welcome-box {
+    background: rgba(255,255,255,0.18);
+    padding: 25px;
+    border-radius: 20px;
+    backdrop-filter: blur(18px);
+    text-align: center;
+    box-shadow: 0 0 25px rgba(255,255,255,0.3);
+    animation: popIn 1.2s ease-out forwards;
+    width: 90%;
+    max-width: 400px;
+}
+
+@keyframes popIn {
+    0%   { transform: scale(0.4); opacity: 0; }
+    60%  { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+.welcome-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+    text-shadow: 0 0 8px rgba(255,255,255,0.6);
+}
+
+.welcome-subtitle {
+    font-size: 16px;
+    color: #dbeafe;
+    margin-bottom: 10px;
+}
+
+.welcome-typing {
+    font-size: 14px;
+    color: #c7d2fe;
+    width: 160px;
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #c7d2fe;
+    animation: typing 2s steps(20), blink 0.6s infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to   { width: 160px; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+
+
+.page {
+    background: rgba(255,255,255,0.15);
+    padding: 20px;
+    border-radius: 20px;
+    backdrop-filter: blur(16px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+    text-align: center;
+    width: 90%;
+    max-width: 520px;
+}
+
+h1 {
+    margin: 0 0 20px 0;
+    color: white;
+    font-size: 24px;
+}
+
+
+
+.game {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+
+
+.card {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 14px;
+    position: relative;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.card .front,
+.card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 14px;
+}
+
+.card .front {
+    background: #2563eb;
+}
+
+.card .back {
+    background: linear-gradient(145deg, #e5f0ff, #ffffff);
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card .back img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}
+
+.flipped {
+    transform: rotateY(180deg);
+}
+
+.matchGlow {
+    animation: glowPulse 0.6s ease-out;
+}
+
+@keyframes glowPulse {
+    0%   { box-shadow: 0 0 0px 0px gold; }
+    50%  { box-shadow: 0 0 20px 10px gold; }
+    100% { box-shadow: 0 0 0px 0px gold; }
+}
+
+
+
+#score {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+
+
+#fireworks {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+}
+
+.particle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    animation: explode 1.2s ease-out forwards;
+}
+
+@keyframes explode {
+    0%   { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: translate(var(--x), var(--y)) scale(0.3); }
+}
+
+
+#stopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: red;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    display: none;
+}
+
+
+
+@media (max-width: 500px) {
+
+    .game {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    #score {
+        font-size: 16px;
+    }
+}
+>>>>>>> dad31b3 (update game)
