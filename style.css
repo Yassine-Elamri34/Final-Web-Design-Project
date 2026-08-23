@@ -201,14 +201,20 @@ h1 {
 /* MOBILE */
 @media (max-width: 500px) {
     .game {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+    }
+
+    .page {
+        padding: 15px;
+        max-width: 340px;
     }
 
     h1 {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     #score {
-        font-size: 16px;
+        font-size: 14px;
     }
 }
